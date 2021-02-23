@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+int main (){
+using namespace std; 
+  
+void discriminant(int a, int b, int c){ 
+  
+    int discriminant = (b*b) - (4*a*c); 
+    if(discriminant > 0){ 
+        cout<<"Discriminant is "<<discriminant 
+            <<" which is Positive"<<endl; 
+              
+        cout<<"Hence Two Solutions"; 
+    } 
+    else if(discriminant == 0){ 
+        cout<<"Discriminant is "<<discriminant 
+            <<" which is Zero"<<endl; 
+              
+        cout<<"Hence One Solution"; 
+    } 
+    else if(discriminant < 0){ 
+        cout<<"Discriminant is "<<discriminant 
+            <<" which is Negative"<<endl; 
+              
+        cout<<"Hence No Real Solutions"; 
+    } 
+return 0;
+} 
