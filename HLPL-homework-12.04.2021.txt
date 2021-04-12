@@ -1,0 +1,156 @@
+#include <iostream>
+#include <new>
+#include <vector>
+using namespace std;
+  
+//2.Print the values of the ten ints to cout
+void displayArray(ostream& os, int* arr) {
+
+	for (int i = 0; i < 10; i++) {
+		os << "arr[" << i << "]" << "=" << arr[i] << endl;
+		
+	}
+	os << "------------Question2---------------" << endl;
+}
+//4.Write a function print_array
+void print_array(ostream& os, int* arr) {
+	for (int i = 0; i < 10; i++) {
+		os << "arr[" << i << "]" << "=" << arr[i] << endl;
+	}
+}
+//7.Write a function print_array
+void print_array1(ostream& os, int* arr1) {
+	os << "------------Question7---------------" << endl;
+	for (int i = 0; i < 11; i++) {
+		os << "arr1[" << i << "]" << "=" << arr1[i] << endl;
+	}
+}
+//10  function print_vector(10 ints)
+void print_vector1(ostream& os,vector<int> vect1) {
+	os << "---------------Question10(10 ints)-----------------" << endl;
+	for (int j = 0; j < 10; j++) {
+	os << "vect1[" << j << "]" << "=" << vect1[j] << endl;
+	}
+}
+//10  function print_vector(11 ints)
+void print_vector2(ostream& os,vector<int> vect2) {
+	os << "---------------Question10(11 ints)-----------------" << endl;
+	for (int j = 0; j < 11; j++) {
+		os << "vect1[" << j << "]" << "=" << vect2[j] << endl;
+	}
+}
+//10  function print_vector(11 ints)
+void print_vector3(ostream& os, vector<int> vect3) {
+	os << "---------------Question10(20 ints)-----------------" << endl;
+	for (int j = 0; j <20; j++) {
+		os << "vect1[" << j << "]" << "=" << vect3[j] << endl;
+	}
+}
+
+int main() {
+	
+	//5.Allocate an array of ten ints on the free store
+	int* arr = new int[10];
+
+	//1.Allocate an array of ten ints
+    arr[0] = 100;
+	arr[1] = 101;
+	arr[2] = 102;
+	arr[3] = 103;
+	arr[4] = 104;
+	arr[5] = 105;
+	arr[6] = 106;
+	arr[7] = 107;
+	arr[8] = 108;
+	arr[9] = 109;
+	
+	//6.Allocate an array of 11 ints
+
+	
+	int* arr1 = new int[11];
+	arr1[0] = 100;
+	arr1[1] = 101;
+	arr1[2] = 102;
+	arr1[3] = 103;
+	arr1[4] = 104;
+	arr1[5] = 105;
+	arr1[6] = 106;
+	arr1[7] = 107;
+	arr1[8] = 108;
+	arr1[9] = 109;
+	arr1[10] = 110;
+
+
+	//6.And print_array
+	cout << "---------------Question6-----------------" << endl;
+	for (int i = 0; i <11; i++) {
+		
+		cout << "arr1[" << i << "]" << "=" << arr1[i] << endl;
+	}
+
+	//8.Allocate an array of 20 ints on the free store
+	
+	int* arr2 = new int[20];
+	arr2[0] = 100;
+	arr2[1] = 101;
+	arr2[2] = 102;
+	arr2[3] = 103;
+	arr2[4] = 104;
+	arr2[5] = 105;
+	arr2[6] = 106;
+	arr2[7] = 107;
+	arr2[8] = 108;
+	arr2[9] = 109;
+	arr2[10] = 110;
+	arr2[11] = 111;
+	arr2[12] = 112;
+	arr2[13] = 113;
+	arr2[14] = 114;
+	arr2[15] = 115;
+	arr2[16] = 116;
+	arr2[17] = 117;
+	arr2[18] = 118;
+	arr2[19] = 119;
+	cout << "---------------Question8-----------------" << endl;
+	for (int i = 0; i < 20; i++) {
+		
+		cout << "arr2[" << i << "]" << "=" << arr2[i] << endl;
+	}
+
+	cout << "---------------Question4-----------------" << endl;
+
+	
+
+	
+	
+	displayArray(cout, arr);
+    print_array(cout, arr);
+	print_array1(cout, arr1);
+	//3.Deallocate the array
+	//9.It has been done;
+	delete[] arr;
+
+	//10.With vector
+	vector<int> vect1;
+	
+	for (int i = 100; i < 110; i++) {
+		vect1.push_back(i);       /* 5.(10 ints) */
+		 
+	}
+	
+	vector<int> vect2;
+	
+	for (int i = 100; i < 111; i++) {
+		vect2.push_back(i);       /* 5.(11 ints) */
+
+	}
+	vector<int> vect3;
+	for (int i = 100; i < 120; i++) {
+		vect3.push_back(i);       /* 5.(20 ints) */
+	}
+	print_vector1(cout,vect1);
+	print_vector2(cout, vect2);
+	print_vector3(cout, vect3);
+
+	
+}
