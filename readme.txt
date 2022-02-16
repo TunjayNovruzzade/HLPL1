@@ -1,1 +1,1 @@
-Tuncay Novruzzade
+Tuncay Novruzzadeas
