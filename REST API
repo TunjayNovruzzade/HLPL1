@@ -1,0 +1,21 @@
+ // Adding a user
+Endpoint: POST /users
+{
+  "name": "John Doe",
+  "email": "johndoe@example.com",
+  "password": "mysecurepassword"
+}
+
+// Editing a user
+Endpoint: PUT /users/{id}
+{
+  "name": "John Doe",
+  "email": "newemail@example.com",
+  "password": "newsecurepassword"
+}
+
+//Deleting a user
+DELETE /users/{id}
+
+// Retrieving user information
+GET /users/{id}
