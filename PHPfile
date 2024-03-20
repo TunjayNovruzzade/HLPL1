@@ -1,0 +1,116 @@
+<?php
+
+class Contact {
+    public $name;
+    public $surname;
+    public $email;
+    public $telephone;
+    public $address;
+    public $city;
+    public $postal_code;
+
+    public function __construct($name, $surname, $email, $telephone, $address, $city, $postal_code) {
+        $this->name = $name;
+        $this->surname = $surname;
+        $this->email = $email;
+        $this->telephone = $telephone;
+        $this->address = $address;
+        $this->city = $city;
+        $this->postal_code = $postal_code;
+    }
+}
+
+class AddressBook {
+    private $contacts = [];
+
+    public function addContact($contact) {
+        $this->contacts[] = $contact;
+    }
+
+    public function editContact($index, $contact) {
+        if (isset($this->contacts[$index])) {
+            $this->contacts[$index] = $contact;
+            return true;
+        }
+        return false;
+    }
+
+    public function deleteContact($index) {
+        if (isset($this->contacts[$index])) {
+            unset($this->contacts[$index]);
+            return true;
+        }
+        return false;
+    }
+
+    public function displayContacts() {
+        foreach ($this->contacts as $index => $contact) {
+            echo "Contact " . ($index + 1) . ":\n";
+            echo "Name: " . $contact->name . "\n";
+            echo "Surname: " . $contact->surname . "\n";
+            echo "Email: " . $contact->email . "\n";
+            echo "Telephone: " . $contact->telephone . "\n";
+            echo "Address: " . $contact->address . "\n";
+            echo "City: " . $contact->city . "\n";
+            echo "Postal Code: " . $contact->postal_code . "\n\n";
+        }
+    }
+}
+
+$addressBook = new AddressBook();
+
+while (true) {
+    echo "1. Add Contact\n";
+    echo "2. Edit Contact\n";
+    echo "3. Delete Contact\n";
+    echo "4. Display Contacts\n";
+    echo "5. Exit\n";
+
+    $choice = readline("Enter your choice: ");
+
+    switch ($choice) {
+        case '1':
+            $name = readline("Enter name: ");
+            $surname = readline("Enter surname: ");
+            $email = readline("Enter email: ");
+            $telephone = readline("Enter telephone number: ");
+            $address = readline("Enter address: ");
+            $city = readline("Enter city: ");
+            $postalCode = readline("Enter postal code: ");
+
+            $contact = new Contact($name, $surname, $email, $telephone, $address, $city, $postalCode);
+            $addressBook->addContact($contact);
+            break;
+
+        case '2':
+            $index = intval(readline("Enter the index of the contact you want to edit: ")) - 1;
+            if ($addressBook->editContact($index, $contact)) {
+                echo "Contact edited successfully.\n";
+            } else {
+                echo "Invalid index.\n";
+            }
+            break;
+
+        case '3':
+            $index = intval(readline("Enter the index of the contact you want to delete: ")) - 1;
+            if ($addressBook->deleteContact($index)) {
+                echo "Contact deleted successfully.\n";
+            } else {
+                echo "Invalid index.\n";
+            }
+            break;
+
+        case '4':
+            $addressBook->displayContacts();
+            break;
+
+        case '5':
+            echo "Exiting program.\n";
+            exit;
+
+        default:
+            echo "Invalid choice. Please choose again.\n";
+            break;
+    }
+}
+?>
